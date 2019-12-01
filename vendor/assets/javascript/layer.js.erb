@@ -117,7 +117,7 @@ var layer = {
 //  },
     ready: function(callback){
     var cssname = 'layer', ver = ''
-        ,path = (isLayui ? '' : '') + "<%= asset_path('stylesheet/layer.scss') %>" + '?v='+ layer.v + ver;
+        ,path = (isLayui ? '' : '') + "<%= asset_path('layer.scss') %>" + '?v='+ layer.v + ver;
     isLayui ? layui.addcss(path, callback, cssname) : ready.link(path, callback, cssname);
     return this;
   },
