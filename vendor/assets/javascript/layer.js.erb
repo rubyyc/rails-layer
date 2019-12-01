@@ -96,7 +96,7 @@ var layer = {
 //    : ready.link('theme/' + options.extend);
     isLayui
       ? layui.addcss('modules/layer/' + options.extend)
-        : ready.link("<%= asset_path('stylesheet/layer.scss') %>");
+        : ready.link("<%= asset_path('layer.scss') %>");
 
       return this;
   },
