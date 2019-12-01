@@ -91,14 +91,11 @@ var layer = {
     
     if(!options.extend) return this;
     
-//    isLayui
-//      ? layui.addcss('modules/layer/' + options.extend)
-//    : ready.link('theme/' + options.extend);
     isLayui
       ? layui.addcss('modules/layer/' + options.extend)
-        : ready.link("<%= asset_path('layer.scss') %>");
+    : ready.link('theme/' + options.extend);
 
-      return this;
+    return this;
   },
 
   //主体CSS等待事件
@@ -109,15 +106,9 @@ var layer = {
   //   return this;
   // },
 
-//  ready: function(callback){
-//    var cssname = 'layer', ver = ''
-//        ,path = (isLayui ? 'modules/layer/' : 'theme/') + 'default/layer.css?v='+ layer.v + ver;
-//    isLayui ? layui.addcss(path, callback, cssname) : ready.link(path, callback, cssname);
-//    return this;
-//  },
-    ready: function(callback){
+  ready: function(callback){
     var cssname = 'layer', ver = ''
-        ,path = (isLayui ? '' : '') + "<%= asset_path('layer.scss') %>" + '?v='+ layer.v + ver;
+        ,path = (isLayui ? 'modules/layer/' : 'theme/') + 'default/layer.css?v='+ layer.v + ver;
     isLayui ? layui.addcss(path, callback, cssname) : ready.link(path, callback, cssname);
     return this;
   },
